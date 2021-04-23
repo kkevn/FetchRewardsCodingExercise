@@ -1,6 +1,7 @@
 package com.kkevn.fetchrewardscodingexercise.jsonlist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,6 +52,9 @@ public class JsonListActivity extends AppCompatActivity {
         rv_list.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EntryAdapter(getApplicationContext());
         rv_list.setAdapter(adapter);
+
+        // apply divider decoration between entries in RecyclerView to easier see separated
+        rv_list.addItemDecoration(new DividerItemDecoration(rv_list.getContext(), DividerItemDecoration.VERTICAL));
     }
 
     /**
