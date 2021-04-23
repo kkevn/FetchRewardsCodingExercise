@@ -2,10 +2,14 @@ package com.kkevn.fetchrewardscodingexercise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.kkevn.fetchrewardscodingexercise.jsonlist.JsonListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +28,19 @@ public class MainActivity extends AppCompatActivity {
         // find and allow start button to load activity that loads and displays the JSON file
         b_start = findViewById(R.id.b_start);
         b_start.setOnClickListener(e -> loadJsonAcitivty());
-
     }
 
+    /**
+     * Attempts to change the current activity to the JsonListActivity and logs the event. Called
+     * when the 'START' button is pressed from this MainActivity.
+     */
     private void loadJsonAcitivty() {
 
+        // log the event
+        Log.i(this.getClass().getSimpleName(), "changing activity to JSON list activity");
+
+        // start new intent to change activity to JSON list activity
+        Intent intent = new Intent(this, JsonListActivity.class);
+        startActivity(intent);
     }
 }
