@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.kkevn.fetchrewardscodingexercise.R;
 
@@ -25,14 +24,19 @@ import java.util.List;
 
 public class JsonListActivity extends AppCompatActivity {
 
+    // initialize filename for JSON file to use
     private final String jsonFileName = "hiring.json";
+
+    // declare relevant list variables
     private RecyclerView rv_list;
     private EntryAdapter adapter;
     private static ArrayList<Entry> entries;
 
+    // declare relevant entry variables
     private boolean entriesFound = true;
     private TextView tv_no_entries;
 
+    // declare Gson object
     private Gson gson;
 
     @Override
@@ -40,10 +44,10 @@ public class JsonListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_json_list);
 
+        // initialize the Entry ArrayList
         entries = new ArrayList<>();
 
         // initialize the Gson object
-        //gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
         gson = new Gson();
 
 
@@ -77,6 +81,8 @@ public class JsonListActivity extends AppCompatActivity {
         // apply divider decoration between entries in RecyclerView to easier differentiate entries
         rv_list.addItemDecoration(new DividerItemDecoration(rv_list.getContext(),
                 DividerItemDecoration.VERTICAL));
+
+        Log.i(this.getClass().getSimpleName(), "created JsonListActivity");
     }
 
     /**

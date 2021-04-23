@@ -13,6 +13,7 @@ import com.kkevn.fetchrewardscodingexercise.jsonlist.JsonListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    // declare variables for elements to interact with
     private TextView tv_instructions_link;
     private Button b_start;
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         // find and allow start button to load activity that loads and displays the JSON file
         b_start = findViewById(R.id.b_start);
         b_start.setOnClickListener(e -> loadJsonAcitivty());
+
+        Log.i(this.getClass().getSimpleName(), "created MainActivity");
     }
 
     /**
