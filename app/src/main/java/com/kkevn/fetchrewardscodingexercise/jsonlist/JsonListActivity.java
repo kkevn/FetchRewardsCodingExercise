@@ -53,6 +53,11 @@ public class JsonListActivity extends AppCompatActivity {
         // process (i.e. validate and sort) the obtained entries if they exist
         if (entriesFound) {
             processEntriesList();
+
+            // check if processing resulted in empty list
+            if (entries.isEmpty()) {
+                entriesFound = false;
+            }
         }
 
 
