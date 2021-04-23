@@ -33,8 +33,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="bottom"
-        android:layout_weight="0.20"
+        android:layout_weight="0.10"
         android:text="@string/app_instructions_link"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_repository_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:layout_weight="0.10"
+        android:text="@string/app_repository_link"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
