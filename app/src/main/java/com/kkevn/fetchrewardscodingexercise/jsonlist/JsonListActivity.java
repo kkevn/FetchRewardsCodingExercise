@@ -5,11 +5,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.gson.Gson;
 import com.kkevn.fetchrewardscodingexercise.R;
 
 public class JsonListActivity extends AppCompatActivity {
 
     private RecyclerView rv_list;
+
+    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
