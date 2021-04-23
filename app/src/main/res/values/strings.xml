@@ -4,4 +4,5 @@
     <string name="app_info">Load and sort a JSON file into a viewable list.</string>
     <string name="app_instructions_link"><a href="https://fetch-hiring.s3.amazonaws.com/mobile.html">View requirements</a></string>
     <string name="b_start">Start</string>
+    <string name="msg_no_entries">No entries to load or missing JSON file.</string>
 </resources>
