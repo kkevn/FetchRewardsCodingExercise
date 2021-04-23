@@ -1,3 +1,10 @@
+/**
+ * Entry is a wrapper class for the Entry objects stored in the JSON file to be parsed. Each entry
+ * contains just an Id, listId, and name.
+ *
+ * @author Kevin Kowalski
+ */
+
 package com.kkevn.fetchrewardscodingexercise.jsonlist;
 
 import com.google.gson.annotations.SerializedName;

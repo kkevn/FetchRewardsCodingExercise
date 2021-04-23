@@ -1,3 +1,10 @@
+/**
+ * EntryViewHolder is a custom ViewHolder used to contain the relevant fields for the item that will
+ * be adapted by the EntryAdapter.
+ *
+ * @author Kevin Kowalski
+ */
+
 package com.kkevn.fetchrewardscodingexercise.jsonlist;
 
 import android.view.View;

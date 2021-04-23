@@ -1,3 +1,11 @@
+/**
+ * MainActivity is the activity containing the "home page" for this coding exercise application. It
+ * contains a brief overview of the project, a hyperlink to view the original instructions, and a
+ * button to navigate to the JsonListActivity.
+ *
+ * @author Kevin Kowalski
+ */
+
 package com.kkevn.fetchrewardscodingexercise;
 
 import androidx.appcompat.app.AppCompatActivity;

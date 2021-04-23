@@ -1,3 +1,10 @@
+/**
+ * EntryAdapter is a custom Adapter object that contains the blueprint for how to adapt the
+ * individual Entry objects into a single View.
+ *
+ * @author Kevin Kowalski
+ */
+
 package com.kkevn.fetchrewardscodingexercise.jsonlist;
 
 import android.content.Context;

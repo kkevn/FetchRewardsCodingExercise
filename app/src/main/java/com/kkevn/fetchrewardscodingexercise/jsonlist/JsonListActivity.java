@@ -1,3 +1,11 @@
+/**
+ * JsonListActivity is the activity containing the project requirements. This activity simply loads
+ * the specified JSON file (using Gson) from the app's \assets\ folder into a List object for
+ * display in a RecyclerView. The list is also both validated and sorted prior to being displayed.
+ *
+ * @author Kevin Kowalski
+ */
+
 package com.kkevn.fetchrewardscodingexercise.jsonlist;
 
 import androidx.appcompat.app.AppCompatActivity;
