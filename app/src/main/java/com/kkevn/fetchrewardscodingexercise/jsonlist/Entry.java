@@ -1,10 +1,15 @@
 package com.kkevn.fetchrewardscodingexercise.jsonlist;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Entry {
 
-    // declare variables for an Entry object
+    // declare serializable variables for an Entry object
+    @SerializedName("id")
     private int id;
+    @SerializedName("listId")
     private int listId;
+    @SerializedName("name")
     private String name;
 
     /**
@@ -45,5 +50,20 @@ public class Entry {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Overrides the toString() method to output this Entry's data as a single String object. Used
+     * for debugging purposes.
+     *
+     * @return {String} Output of Entry's data.
+     */
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "id=" + id +
+                ", listId=" + listId +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
