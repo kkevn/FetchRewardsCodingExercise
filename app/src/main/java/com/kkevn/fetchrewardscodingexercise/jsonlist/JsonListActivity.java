@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class JsonListActivity extends AppCompatActivity {
@@ -49,6 +50,11 @@ public class JsonListActivity extends AppCompatActivity {
         // parse the JSON entries at the specified file
         entriesFound = parseEntriesList(jsonFileName);
 
+        // process (i.e. validate and sort) the obtained entries if they exist
+        if (entriesFound) {
+            processEntriesList();
+        }
+
 
         // find and reveal the empty list message if no entries available
         tv_no_entries = findViewById(R.id.tv_no_entries);
@@ -66,18 +72,6 @@ public class JsonListActivity extends AppCompatActivity {
         // apply divider decoration between entries in RecyclerView to easier differentiate entries
         rv_list.addItemDecoration(new DividerItemDecoration(rv_list.getContext(),
                 DividerItemDecoration.VERTICAL));
-    }
-
-    /**
-     * Determines if the given name is a valid one. A valid name is determined as one that is
-     * neither null nor empty.
-     *
-     * @param {String} name: Name to determine validity of.
-     *
-     * @return {boolean} Validity of name.
-     */
-    private boolean isValidName(String name) {
-        return !(name == null || name.isEmpty());
     }
 
     /**
@@ -132,6 +126,48 @@ public class JsonListActivity extends AppCompatActivity {
             // return status as failure
             return false;
         }
+    }
+
+    /**
+     * Determines if the given name is a valid one. A valid name is determined as one that is
+     * neither null nor empty.
+     *
+     * @param {String} name: Name to determine validity of.
+     *
+     * @return {boolean} Validity of name.
+     */
+    private boolean isValidName(String name) {
+        return !(name == null || name.isEmpty());
+    }
+
+    /**
+     * Processes the Entry list object to be both valid and sorted, per the project requirements.
+     * The list is first purged of any invalid entries and then sorted. Sorting first groups by an
+     * entry's listId and then each subgroup by their name, in ascending order.
+     */
+    private void processEntriesList() {
+
+        /* ======== Validation ======== */
+
+        // remove each invalid entry in the Entry list and log the event
+        entries.removeIf(e -> !isValidName(e.getName()));
+        Log.i(this.getClass().getSimpleName(), "validated Entry list");
+
+        /* ======== Sorting ======== */
+
+        // create Comparator object to compare entries against their listId
+        Comparator<Entry> comparator = Comparator.comparing(Entry::getListId);
+
+        // secondary sort was to compare entries by their name
+        comparator = comparator.thenComparing(Entry::getName);
+
+        // swap the above secondary sort for this one IF need to sort by entry Id value rather than
+        // by name (as this will return a slightly different sort than when sorting by name)
+        //comparator = comparator.thenComparing(Entry::getId);
+
+        // sort the list with the given Comparator and log the event
+        entries.sort(comparator);
+        Log.i(this.getClass().getSimpleName(), "sorted Entry list");
     }
 
     /**
