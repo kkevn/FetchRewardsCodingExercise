@@ -10,7 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="32dp"
-        android:text="4"
         android:textSize="36sp"
         android:textAlignment="center"/>
 
@@ -20,7 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@id/tv_listId"
-        android:text="Item 999"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textAlignment="center"/>
@@ -31,7 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/tv_listId"
         android:layout_below="@id/tv_name"
-        android:text="ID=999"
         android:textSize="18sp"
         android:textStyle="italic"
         android:fontFamily="monospace"

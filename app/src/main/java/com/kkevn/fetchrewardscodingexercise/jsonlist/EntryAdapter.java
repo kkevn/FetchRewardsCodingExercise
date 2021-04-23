@@ -63,7 +63,7 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryViewHolder> {
         // update the TextView contents of the current Entry item
         holder.setEntryIdText("ID=" + entry.getId());
         holder.setEntryListIdText("" + entry.getListId());
-        holder.setEntryNameText(entry.getName());
+        holder.setEntryNameText("\"" + entry.getName() + "\"");
     }
 
     /**
