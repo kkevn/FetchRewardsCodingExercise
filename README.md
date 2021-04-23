@@ -36,6 +36,7 @@ alt="Fetch Rewards Coding Exercise Demo" width="640" height="360" border="10" />
 
 ### Specifications
 
-* **Android/Java** for application development 
+* **Android/Java 1.8** for application development 
 * built in Android Studio 4.1.3
 * supports **ONLY** Android 11.0 (API 30), per project instructions of "supporting the current latest mobile OS"
+* tested on Google Pixel 3a emulator running API 30
