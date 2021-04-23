@@ -47,6 +47,12 @@ public class JsonListActivity extends AppCompatActivity {
     // declare Gson object
     private Gson gson;
 
+    /**
+     * Creates the activity by initializing the Entry list, Gson object, and UI elements such as the
+     * RecyclerView. Also loads and processes the populated Entry list and sets up the RecyclerView.
+     *
+     * @param {Bundle} savedInstanceState: Bundle object containing activity's previous state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

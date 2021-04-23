@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_instructions_link;
     private Button b_start;
 
+    /**
+     * Creates the activity by initializing and setting up the hyperlinks and start button.
+     *
+     * @param {Bundle} savedInstanceState: Bundle object containing activity's previous state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
